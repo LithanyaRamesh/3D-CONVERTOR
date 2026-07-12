@@ -1,0 +1,181 @@
+/* ======================================================
+   Blueprint3D — Global Reset & Base Styles
+   Dark-first design system to match the CAD sci-fi theme
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Design Tokens */
+  --bg-root: #020617;
+  --bg-dark: #070b19;
+  --bg-surface: rgba(13, 20, 38, 0.65);
+  --bg-surface-solid: #0d1426;
+
+  --neon-cyan: #0ea5e9;
+  --neon-cyan-glow: rgba(14, 165, 233, 0.25);
+  --neon-blue: #2563eb;
+  --neon-violet: #6366f1;
+  --neon-green: #10b981;
+  --neon-amber: #f59e0b;
+
+  --border-subtle: rgba(56, 189, 248, 0.12);
+  --border-mid: rgba(56, 189, 248, 0.25);
+  --border-bright: rgba(56, 189, 248, 0.45);
+
+  --text-white: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, 'Courier New', monospace;
+
+  /* Base typography */
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--text-white);
+  background-color: var(--bg-root);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+/* ---- HTML & Body ---- */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-root);
+  color: var(--text-white);
+  overflow-x: hidden;
+}
+
+/* ---- Root App Container ---- */
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- Typography Reset (neutral — let components control headings) ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+p {
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #38bdf8;
+}
+
+/* ---- Code / Mono ---- */
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: rgba(14, 165, 233, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--neon-cyan);
+}
+
+pre {
+  padding: 12px 16px;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* ---- Form Elements ---- */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: var(--font-sans);
+  background: rgba(13, 20, 38, 0.6);
+  color: var(--text-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 2px var(--neon-cyan-glow);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(7, 11, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.45);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: rgba(14, 165, 233, 0.3);
+  color: var(--text-white);
+}
+
+/* ---- Utility: Smooth transitions ---- */
+* {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,195 @@
+.hero {
+  width: 100%;
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: radial-gradient(
+    circle at top,
+    #1d4ed8 0%,
+    #0f172a 40%,
+    #020617 100%
+  );
+
+  color: white;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  background: #2563eb;
+
+  filter: blur(220px);
+
+  opacity: 0.25;
+
+  border-radius: 50%;
+
+  top: -250px;
+
+  left: -150px;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  background: #7c3aed;
+
+  filter: blur(220px);
+
+  opacity: 0.18;
+
+  border-radius: 50%;
+
+  right: -150px;
+
+  bottom: -200px;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 900px;
+}
+
+.badge {
+  display: inline-block;
+
+  padding: 10px 22px;
+
+  border: 1px solid #3b82f6;
+
+  border-radius: 50px;
+
+  color: #60a5fa;
+
+  margin-bottom: 30px;
+
+  letter-spacing: 2px;
+
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: 72px;
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #3b82f6;
+}
+
+.hero p {
+  font-size: 22px;
+
+  color: #cbd5e1;
+
+  width: 750px;
+
+  margin: auto;
+
+  line-height: 1.8;
+}
+
+.hero-btn {
+  margin-top: 45px;
+
+  padding: 18px 45px;
+
+  font-size: 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: #2563eb;
+
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 0 30px #2563eb;
+}
+
+.hero-page-root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #020617;
+  color: white;
+  position: relative;
+}
+
+.landing-view-active {
+  background: radial-gradient(
+    circle at top,
+    #1d4ed8 0%,
+    #0f172a 40%,
+    #020617 100%
+  );
+  justify-content: center;
+  align-items: center;
+}
+
+.workspace-view-active {
+  background: #070a13;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.upload-card-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.full-workspace-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
